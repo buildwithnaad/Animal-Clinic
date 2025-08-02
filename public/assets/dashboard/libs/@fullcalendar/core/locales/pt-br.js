@@ -20,7 +20,7 @@
         eventLimitText: function (n) {
             return "mais +" + n;
         },
-        noEventsMessage: "Não há eventos para mostrar"
+        noEventsMessage: "Não há eventos of mostrar"
     };
 
     return ptBr;

@@ -1,5 +1,5 @@
 @extends('layouts.dashboard')
-@section('title', 'Clientes')
+@section('title', 'Clients')
 @section('dash-body')
            <!-- ============================================================== -->
             <!-- Start Page Content here -->
@@ -15,7 +15,7 @@
                         <!-- start page title -->
                         <div class="row">
                             <div class="col-12">
-                                    <h4 class="page-title mt-4">Clientes</h4>
+                                    <h4 class="page-title mt-4">Clients</h4>
                                 </div>
                             </div>
                         </div>
@@ -38,7 +38,7 @@
                             <button type="button" class="close alert-close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <strong class="text-light">Alerta! {{session()->get('error')}}</strong>
+                            <strong class="text-light">Alert! {{session()->get('error')}}</strong>
                             </div>
                         @endif
                         <div class="form-group">
@@ -46,7 +46,7 @@
                                 @csrf
                                     <div class="column">
                                         <div class="col-md-12 col-12">
-                                            <h4>Novo Cliente</h4>
+                                            <h4>New Client</h4>
                                             <input type="hidden" name="status" value="Ativo">
                                             <div class="col-md-3 d-flex justify-content-between">
                                                 <div class="form-check mr-3 ml-2 mt-1">
@@ -71,32 +71,32 @@
 
                                             <div class="col-md-12 d-flex my-1">
                                                 <div id="nome" class="col-md-6">
-                                                    <label>Nome</label>
-                                                    <input type="text" class="form-control" name="nome" placeholder="Insira o nome" value="">
+                                                    <label>Name</label>
+                                                    <input type="text" class="form-control" name="nome" placeholder="Enter the Name" value="">
                                                 </div>
                                                 <div id="data_nascimento" class="col-md-3">
-                                                    <label>Data de Nascimento</label>
-                                                    <input type="date" class="form-control" name="data_nascimento" placeholder="Insira a data de nascimento" value="">
+                                                    <label>Date of Birth</label>
+                                                    <input type="date" class="form-control" name="data_nascimento" placeholder="Insira a data to nascimento" value="">
                                                 </div>
                                                 <div id="razao_social" class="col-md-6">
-                                                    <label>Razão Social</label>
+                                                    <label>Company Name</label>
                                                     <input type="text" class="form-control" name="razao_social" placeholder="Insira a razão social" value="">
                                                 </div>
                                                 <div id="nome_fantasia" class="col-md-6">
-                                                    <label>Nome Fantasia</label>
-                                                    <input type="text" class="form-control" name="nome_fantasia" placeholder="Insira o nome fantasia" value="">
+                                                    <label>Trade Name</label>
+                                                    <input type="text" class="form-control" name="nome_fantasia" placeholder="Enter the Name fantasia" value="">
                                                 </div>
                                             </div>
                                             <div class="col-md-12 d-flex my-1">
                                                 <div id="endereco" class="col-md-6">
-                                                    <label>Endereço</label>
-                                                    <input type="text" class="form-control" name="endereco" placeholder="Insira o endereço" value="">
+                                                    <label>Address</label>
+                                                    <input type="text" class="form-control" name="endereco" placeholder="Enter the Address" value="">
                                                 </div>
                                             </div>
 
 
-                                            <button type="submit" class="btn btn-success my-1 mr-2" name="addCliente" value="adicionarCliente">Adicionar</button>
-                                            <button type="button" class="btn btn-danger my-1" id="cancelNew" name="cancelNew" value="cancelNew">Cancelar</button>
+                                            <button type="submit" class="btn btn-success my-1 mr-2" name="addCliente" value="adicionarCliente">Add</button>
+                                            <button type="button" class="btn btn-danger my-1" id="cancelNew" name="cancelNew" value="cancelNew">Cancel</button>
                                         </div>
                                     </div>
                             </form>
@@ -106,7 +106,7 @@
                             </div>
 
                             <div class="">
-                                <button type="button" id="novoCliente" class="btn btn-success my-1">Novo</button>
+                                <button type="button" id="novoCliente" class="btn btn-success my-1">New</button>
                             </div>
 
 
@@ -114,11 +114,11 @@
                                         <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
                                             <thead>
                                                 <tr>
-                                                    <th>id</th>
-                                                    <th>Nome/Razão Social</th>
-                                                    <th>Endereço</th>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Address</th>
                                                     <th>CPF/CNPJ</th>
-                                                    <th></th>
+                                                    <th>Actions</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
@@ -142,7 +142,7 @@
                                                     <a href="{{ route('clientes.edit', $cliente->id) }}" class="btn btn-warning mx-1" ><i class="fas fa-pencil-alt"></i></a>
 
                                                         <form action="{{ route('clientes.destroy', $cliente->id)}}" method="POST"
-                                                             onsubmit="return confirm('Deseja apagar esta cliente?');">
+                                                             onsubmit="return confirm('Do you want to delete this client?');">
 
                                                             @csrf
                                                             @method('DELETE')
@@ -170,7 +170,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="text-md-right justify-content-end d-none d-sm-block">
-                                    <script>document.write(new Date().getFullYear())</script> - Desenvolvido por <strong><a href="https://porfiriodev.vercel.app/" target="_blank">Porfírio</a></strong>
+                                    <script>document.write(new Date().getFullYear())</script> - Developed By <strong><a href="" target="_blank">Naad Ali</a></strong>
                                 </div>
                             </div>
                         </div>
@@ -215,60 +215,11 @@
                         $("#formnovoCliente").hide();
 
                 });
-
-                // if($('#flexRadioDefault1').prop('checked','checked')){
-                //     console.log('aki')
-                //     // $('#cpf').css('display','block');
-                //     // $('#cnpj').css('display','none');
-                //     $('#cnpj').hide();
-                //     $('#cpf').show();
-
-                // }else{
-                // // if($('#flexRadioDefault2').prop('checked','checked')){
-                //     console.log('aki2')
-                //     $('#cpf').hide();
-                //     $('#cnpj').show();
-                //     // $('#cpf').css('display','none');
-                //     // $('#cnpj').css('display','block');
-                // }
-
                 $(document).ready(function() {
-                //     $("#flexRadioDefault1").on( "change", function() {
-
-                //         if($('#flexRadioDefault1').is(':checked')){
-                //     console.log('aki')
-                //     // $('#cpf').css('display','block');
-                //     // $('#cnpj').css('display','none');
-                //     $('#cnpj').hide().removeAttr("required");
-                //     $('#razao_social').hide().removeAttr("required");
-                //     $('#nome_fantasia').hide().removeAttr("required");
-                //     $('#cpf').show(100).attr("required", true);
-                //     $('#nome').show(100).attr("required", true);
-                //     $('#data_nascimento').show(100).attr("required", true);
-
-                // }
-                //     } );
-                //     $("#flexRadioDefault2").on( "change", function() {
-
-                //     if($('#flexRadioDefault2').is(':checked')){
-                //     console.log('aki2')
-                //     // $('#cpf').css('display','block');
-                //     // $('#cnpj').css('display','none');
-                //     $('#cpf').hide().removeAttr("required");
-                //     $('#nome').hide().removeAttr("required");
-                //     $('#data_nascimento').hide().removeAttr("required");
-                //     $('#cnpj').show(100).attr("required", true);
-                //     $('#razao_social').show(100).attr("required", true);
-                //     $('#nome_fantasia').show(100).attr("required", true);
-
-                //     }
-                //         } );
                 $("#flexRadioDefault1").on( "change", function() {
 
 if($('#flexRadioDefault1').is(':checked')){
 console.log('aki')
-// $('#cpf').css('display','block');
-// $('#cnpj').css('display','none');
 $('#cnpj').hide()
 $('#cnpj input').removeAttr("required").val('');
 $('#razao_social').hide()

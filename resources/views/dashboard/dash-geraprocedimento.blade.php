@@ -72,7 +72,7 @@
                                     </div>
                                     <div class="col-md-12 mt-3 mb-2 d-flex">
                                         <div class="col-md-4" id="pcd_client">
-                                            <label for="pcd_client" class="">Procedimento para o Cliente:</label>
+                                            <label for="pcd_client" class="">Procedimento of o Cliente:</label>
                                             <select class="js-select-clients js-states form-control" name="cliente" required>
                                                 <option value="">Selecione...</option>
                                                 @foreach($clientes as $c)
@@ -81,7 +81,7 @@
                                             </select>
                                         </div>
                                         <div class="col-md-3" id="pcd_animal">
-                                            <label for="pcd_animal" class="">Procedimento para o Animal:</label>
+                                            <label for="pcd_animal" class="">Procedimento of o Animal:</label>
                                             <select class="js-select-animal js-states form-control" name="animal" required>
                                                 <option value="">Selecione...</option>
                                                 @foreach($animais as $a)

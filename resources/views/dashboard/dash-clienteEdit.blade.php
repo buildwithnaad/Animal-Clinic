@@ -68,8 +68,8 @@
                                                     <input type="text" class="form-control" name="nome" placeholder="Insira o nome" value="{{isset($clienteId->nome) ? $clienteId->nome : '' }}">
                                                 </div>
                                                 <div id="data_nascimento" class="col-md-3">
-                                                    <label>Data de Nascimento</label>
-                                                    <input type="date" class="form-control" name="data_nascimento" placeholder="Insira a data de nascimento" value="{{isset($clienteId->data_nascimento) ? $clienteId->data_nascimento : '' }}">
+                                                    <label>Data to Nascimento</label>
+                                                    <input type="date" class="form-control" name="data_nascimento" placeholder="Insira a data to nascimento" value="{{isset($clienteId->data_nascimento) ? $clienteId->data_nascimento : '' }}">
                                                 </div>
                                                 <div id="razao_social" class="col-md-6">
                                                     <label>Razão Social</label>

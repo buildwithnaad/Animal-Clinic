@@ -4,7 +4,7 @@
         grid: {
             noDataContent: "Não encontrado",
             deleteConfirm: "Você tem certeza que deseja remover este item?",
-            pagerFormat: "Páginas: {first} {prev} {pages} {next} {last} &nbsp;&nbsp; {pageIndex} de {pageCount}",
+            pagerFormat: "Páginas: {first} {prev} {pages} {next} {last} &nbsp;&nbsp; {pageIndex} to {pageCount}",
             pagePrevText: "Anterior",
             pageNextText: "Seguinte",
             pageFirstText: "Primeira",
@@ -19,11 +19,11 @@
 
         fields: {
             control: {
-                searchModeButtonTooltip: "Mudar para busca",
-                insertModeButtonTooltip: "Mudar para inserção",
+                searchModeButtonTooltip: "Mudar of busca",
+                insertModeButtonTooltip: "Mudar of inserção",
                 editButtonTooltip: "Editar",
                 deleteButtonTooltip: "Remover",
-                searchButtonTooltip: "Buscar",
+                searchButtonTooltip: "Search",
                 clearFilterButtonTooltip: "Remover filtro",
                 insertButtonTooltip: "Adicionar",
                 updateButtonTooltip: "Atualizar",

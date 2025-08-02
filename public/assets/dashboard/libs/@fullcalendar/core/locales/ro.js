@@ -24,7 +24,7 @@
         eventLimitText: function (n) {
             return "+alte " + n;
         },
-        noEventsMessage: "Nu există evenimente de afișat"
+        noEventsMessage: "Nu există evenimente to afișat"
     };
 
     return ro;

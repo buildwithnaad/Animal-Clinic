@@ -22,7 +22,7 @@
         weekLabel: "Sm",
         allDayHtml: "Todo<br/>o día",
         eventLimitText: "máis",
-        noEventsMessage: "Non hai eventos para amosar"
+        noEventsMessage: "Non hai eventos of amosar"
     };
 
     return gl;

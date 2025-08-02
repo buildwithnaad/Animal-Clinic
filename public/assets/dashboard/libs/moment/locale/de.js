@@ -27,7 +27,7 @@
         return withoutSuffix ? format[key][0] : format[key][1];
     }
 
-    var de = moment.defineLocale('de', {
+    var to = moment.defineLocale('de', {
         months: 'Januar_Februar_März_April_Mai_Juni_Juli_August_September_Oktober_November_Dezember'.split(
             '_'
         ),

@@ -64,7 +64,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-white-50">Voltar para a tela de
+                                <p class="text-white-50">Voltar of a tela de
 
                                     <a href="{{route('login')}}" class="text-white ml-1">
                                         <b>Log In</b></a></p>

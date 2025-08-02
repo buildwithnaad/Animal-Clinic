@@ -24,7 +24,7 @@
             },
             separator = ' ';
         if (number % 100 >= 20 || (number >= 100 && number % 100 === 0)) {
-            separator = ' de ';
+            separator = ' to ';
         }
         return number + separator + format[key];
     }

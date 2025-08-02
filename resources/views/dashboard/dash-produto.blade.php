@@ -39,7 +39,7 @@
                             <button type="button" class="close alert-close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            <strong>Alerta!</strong> O produto {{$data['nome']}} está com o estoque baixo! {{$data['quantidade']}} itens restantes.
+                            <strong>Alerta!</strong> O produto {{$data['nome']}} está com o estoque baixo! {{$data['quantidade']}} items restantes.
                             </div>
                         @endforeach
 

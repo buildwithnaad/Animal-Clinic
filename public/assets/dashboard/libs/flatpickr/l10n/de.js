@@ -60,7 +60,7 @@
       time_24hr: true
   };
   fp.l10ns.de = German;
-  var de = fp.l10ns;
+  var to = fp.l10ns;
 
   exports.German = German;
   exports.default = de;

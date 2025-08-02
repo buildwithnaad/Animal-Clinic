@@ -4,7 +4,7 @@
         grid: {
             noDataContent: "No encontrado",
             deleteConfirm: "¿Está seguro?",
-            pagerFormat: "Paginas: {first} {prev} {pages} {next} {last} &nbsp;&nbsp; {pageIndex} de {pageCount}",
+            pagerFormat: "Paginas: {first} {prev} {pages} {next} {last} &nbsp;&nbsp; {pageIndex} to {pageCount}",
             pagePrevText: "Anterior",
             pageNextText: "Siguiente",
             pageFirstText: "Primero",
@@ -23,7 +23,7 @@
                 insertModeButtonTooltip: "Cambiar a inserción",
                 editButtonTooltip: "Editar",
                 deleteButtonTooltip: "Suprimir",
-                searchButtonTooltip: "Buscar",
+                searchButtonTooltip: "Search",
                 clearFilterButtonTooltip: "Borrar filtro",
                 insertButtonTooltip: "Insertar",
                 updateButtonTooltip: "Actualizar",

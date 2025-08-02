@@ -50,7 +50,7 @@
                                                     <input required type="text" class="form-control" name="chip" placeholder="Insira o número do chip" value="{{isset($animalId->chip) ? $animalId->chip : '' }}">
                                                 </div>
                                                 <div id="tipo" class="col-md-3">
-                                                    <label>Tipo de Animal</label>
+                                                    <label>Tipo to Animal</label>
                                                     <select required class='form-control select2' name='tipo'>
                                                         @if($animalId->animal_nome)
                                                         <option value="{{isset($animalId->tipo) ? $animalId->tipo : '' }}" selected>{{isset($animalId->tipo) ? $animalId->tipo : 'Selecione...' }}</option>
@@ -97,7 +97,7 @@
                                                 </div>
                                                 <div id="obito_data" class="col-md-3">
                                                     <label>Data do Óbito</label>
-                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data de óbito" value="{{isset($animalId->obito_data) ? $animalId->obito_data : '' }}">
+                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data to óbito" value="{{isset($animalId->obito_data) ? $animalId->obito_data : '' }}">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 d-flex my-3">

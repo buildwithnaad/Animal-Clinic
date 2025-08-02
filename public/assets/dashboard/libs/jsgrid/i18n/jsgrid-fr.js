@@ -2,9 +2,9 @@
 
     jsGrid.locales.fr = {
         grid: {
-            noDataContent: "Pas de données",
+            noDataContent: "Pas to données",
             deleteConfirm: "Êtes-vous sûr ?",
-            pagerFormat: "Pages: {first} {prev} {pages} {next} {last} &nbsp;&nbsp; {pageIndex} de {pageCount}",
+            pagerFormat: "Pages: {first} {prev} {pages} {next} {last} &nbsp;&nbsp; {pageIndex} to {pageCount}",
             pagePrevText: "<",
             pageNextText: ">",
             pageFirstText: "<<",
@@ -33,11 +33,11 @@
 
         validators: {
             required: { message: "Champ requis" },
-            rangeLength: { message: "Longueur de la valeur du champ est hors de la plage définie" },
+            rangeLength: { message: "Longueur to la valeur du champ est hors to la plage définie" },
             minLength: { message: "La valeur du champ est trop court" },
             maxLength: { message: "La valeur du champ est trop long" },
             pattern: { message: "La valeur du champ ne correspond pas à la configuration définie" },
-            range: { message: "La valeur du champ est hors de la plage définie" },
+            range: { message: "La valeur du champ est hors to la plage définie" },
             min: { message: "La valeur du champ est trop petit" },
             max: { message: "La valeur du champ est trop grande" }
         }

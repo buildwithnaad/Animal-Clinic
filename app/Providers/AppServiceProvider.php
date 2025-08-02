@@ -3,38 +3,26 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Schema;
+
+use Carbon\Carbon;
 
 class AppServiceProvider extends ServiceProvider
 {
     /**
      * Register any application services.
-<<<<<<< HEAD
      */
     public function register(): void
-=======
-     *
-     * @return void
-     */
-    public function register()
->>>>>>> legacy/v1.0
     {
-        //
+            Schema::defaultStringLength(191);
+
     }
 
     /**
      * Bootstrap any application services.
-<<<<<<< HEAD
      */
     public function boot(): void
     {
-        //
-=======
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        \Carbon\Carbon::setLocale(config('app.locale'));
->>>>>>> legacy/v1.0
+        Carbon::setLocale(config('app.locale'));
     }
 }

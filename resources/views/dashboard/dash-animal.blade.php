@@ -49,7 +49,7 @@
                                                     <input type="text" required class="form-control" name="chip" placeholder="Insira o número do chip" value="">
                                                 </div>
                                                 <div id="tipo" class="col-md-3">
-                                                    <label>Tipo de Animal</label>
+                                                    <label>Tipo to Animal</label>
                                                     <select class='form-control select2' name='tipo' required>
                                                         <option value="" selected>Selecione...</option>
                                                         <option value="Felino" >Felino</option>
@@ -93,13 +93,13 @@
                                                 </div>
                                                 <!-- <div id="obito_data" class="col-md-3">
                                                     <label>Data do Óbito</label>
-                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data de óbito">
+                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data to óbito">
                                                 </div> -->
                                             </div>
                                             <div class="col-md-6 d-flex my-3">
                                                 <div id="obito_data" class="col-md-4">
                                                     <label>Data do Óbito</label>
-                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data de óbito">
+                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data to óbito">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 d-flex my-3">
