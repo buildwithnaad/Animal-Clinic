@@ -13,6 +13,8 @@ Route::get('/home', function () {
     return view('home');
 })->name('home');
 
+Route::view('/adoption', 'adoption')->name('adoption');
+
 Route::fallback(function () {
     return view('errors/404');
 });

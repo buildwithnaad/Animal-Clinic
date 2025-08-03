@@ -7,7 +7,7 @@
 </style>
 
 @section('content')
-    <section class="min-w-screen min-h-screen z-10 hero-section" style="padding: 220px 20px 20px 50px ">
+    <section class="w-full min-h-screen z-10 hero-section" style="padding: 220px 20px 20px 50px ">
 
         <div class="flex flex-col z-10  gap-10" >
             <h1 class="flex flex-col max-w-md text-white gap-3">
@@ -33,10 +33,10 @@
                     </div>
                     <div class="col-span-1 w-100">
                         <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 flex flex-col font-sans gap-2">
-                            <small class="text-sm text-black">Quality & Experience</small>
+                            <small class="text-sm text-gray-600">Quality & Experience</small>
                             <span class="text-green-700">
                                 Quality & Experience
-                                Welcome to<span class="text-green-500">CUIDAR</span></span>
+                                Welcome to <span class="text-green-500">CUIDAR</span></span>
                         </h1>
 
                         <p class="mb-6 font-sans w-10/12 text-lg font-medium">
@@ -48,15 +48,13 @@
                         </p>
 
                         <ul class="list-inside mb-6 text-lg font-semibold py-5">
-                            <li class="my-3 flex items-center"><span class="material-symbols-outlined mr-3">pets</span>We
+                            <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1"></i></span>We
                                 have an area of over 3
                                 thousand square meters
                                 metros quadrados</li>
-                            <li class="my-3 flex items-center"><span
-                                    class="material-symbols-outlined mr-3">pets</span>Physical structure in constant
+                            <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1"></i></span>Physical structure in constant
                                 evolution</li>
-                            <li class="my-3 flex items-center"><span
-                                    class="material-symbols-outlined mr-3">pets</span>Professionals dedicated to care 7
+                            <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1"></i></span>Professionals dedicated to care 7
                                 days a week
                             </li>
                         </ul>
@@ -79,7 +77,7 @@
                                     class="flex w-full rounded-l">
                                 <div
                                     class="text-white before:rounded-l gradient-bg-green font-bold flex flex-col items-center justify-end absolute text-center top-0 left-0 bottom-8 w-full h-full z-[1] text-white pb-6 before:absolute before:content-[''] before:left-0 before:top-0 before:h-full before:w-full before:-z-[1] before:w-full before:h-full before:object-contain">
-                                    <span class="material-symbols-outlined mr-3">pets</span>
+                                    <i class="fa-solid fa-paw mt-1"></i>
                                     <h3 class="text-4xl font-extrabold font-sans my-5">We take care</h3>
                                     <div>Popular clinic for large and small
                                     </div>
@@ -91,7 +89,7 @@
                                 <img src="{{ url('cuidar_files/abrigamos.png') }}" alt="" class="flex w-full">
                                 <div
                                     class="text-white gradient-bg-orange font-bold flex flex-col items-center justify-end absolute text-center top-0 left-0 bottom-8 w-full h-full z-[1] text-white pb-6 before:absolute before:content-[''] before:left-0 before:top-0 before:h-full before:w-full before:-z-[1] before:w-full before:h-full before:object-contain">
-                                    <span class="material-symbols-outlined mr-3">pets</span>
+                                    <i class="fa-solid fa-paw mt-1"></i>
                                     <h3 class="text-4xl font-extrabold font-sans my-5">We shelter
                                     </h3>
                                     <div>Private shelter with veterinary assistance
@@ -104,7 +102,7 @@
                                 <img src="{{ url('cuidar_files/adote.png') }}" alt="" class="flex w-full rounded-r">
                                 <div
                                     class="text-white before:rounded-r gradient-bg-blue font-bold flex flex-col items-center justify-end absolute text-center top-0 left-0 bottom-8 w-full h-full z-[1] text-white pb-6 before:absolute before:content-[''] before:left-0 before:top-0 before:h-full before:w-full before:-z-[1] before:w-full before:h-full before:object-contain">
-                                    <span class="material-symbols-outlined mr-3">pets</span>
+                                    <i class="fa-solid fa-paw mt-1"></i>
                                     <h3 class="text-4xl font-extrabold font-sans my-5">Don't buy! Adopt!
                                     </h3>
                                     <div>When you embrace the feeling is stronger
@@ -133,7 +131,7 @@
                 <div class="">
                     <h1
                         class="text-4xl lg:text-5xl font-extrabold mb-4 flex flex-col font-sans gap-2 items-center justify-center">
-                        <small class="text-sm text-black">What Can We Do For You?
+                        <small class="text-sm text-gray-600">What Can We Do For You?
                         </small>
                         <span class="text-green-700">Veterinary <span class="text-green-500">Care</span></span>
                     </h1>
@@ -199,12 +197,12 @@
                 </div>
             </div>
         </section>
-        <section class="py-[100px]">
+        <section class="pt-[100px] pb-[250px]">
             <div class="container  mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl flex flex-col items-center">
                 <div class="">
                     <h1
                         class="text-4xl lg:text-5xl font-extrabold mb-4 flex flex-col font-sans gap-2 items-center justify-center">
-                        <small class="text-sm text-black">Team & Partners</small>
+                        <small class="text-sm text-gray-600">Team & Partners</small>
                         <span class="text-green-700">These make the <span class="text-green-500">difference</span></span>
                     </h1>
                 </div>

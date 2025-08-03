@@ -1,7 +1,2 @@
-<<<<<<< HEAD
 import './bootstrap';
-=======
-require('./bootstrap');
-
-require('alpinejs');
->>>>>>> legacy/v1.0
+import '../css/app.css';

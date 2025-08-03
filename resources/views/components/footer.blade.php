@@ -56,43 +56,33 @@
                                 <ul class="text-gray-100 font-sans font-semibold flex flex-col gap-4">
                                     <li>
                                         <a href="#" class="flex items-center">
-                                            <span class="material-symbols-outlined text-green-500">
-                                                navigate_next
-                                            </span>
+                                            <i class="fa-solid fa-angle-right"></i>
                                             Who we are?
                                         </a>
                                     </li>
                                     <li>
                                         <a class="flex items-center" href="#">
-                                            <span class="material-symbols-outlined text-green-500">
-                                                navigate_next
-                                            </span>
+                                           <i class="fa-solid fa-angle-right"></i>
                                             Adoption
                                         </a>
                                     </li>
                                     <li>
                                         <a class="flex items-center" href="#">
-                                            <span class="material-symbols-outlined text-green-500">
-                                                navigate_next
-                                            </span>
+                                            <i class="fa-solid fa-angle-right"></i>
                                             Services
                                         </a>
 
                                     </li>
                                     <li>
                                         <a class="flex items-center" href="#">
-                                            <span class="material-symbols-outlined text-green-500">
-                                                navigate_next
-                                            </span>
+                                            <i class="fa-solid fa-angle-right"></i>
                                             Blog
                                         </a>
 
                                     </li>
                                     <li>
                                         <a class="flex items-center" href="#">
-                                            <span class="material-symbols-outlined text-green-500">
-                                                navigate_next
-                                            </span>
+                                            <i class="fa-solid fa-angle-right"></i>
                                             Contact
                                         </a>
                                     </li>

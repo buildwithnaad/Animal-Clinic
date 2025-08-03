@@ -1,6 +1,6 @@
 <header class="w-100 min-w-full fixed z-50">
         <div id="top-bar"
-            class="bg-lime-600 text-white w-100 p-5 flex items-center justify-center transition-transform duration-300">
+            class="bg-lime-600 text-white w-full p-5 flex items-center justify-center transition-transform duration-300">
             <div class="container  mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
                 <div class="flex flex-row items-center gap-10 justify-between">
                     <div class="flex flex-row items-center gap-10 text-sm">
@@ -64,7 +64,7 @@
             </div>
         </div>
         <nav id="nav-bar"
-            class="bg-lime-600/50 text-slate-500 w-100 p-0 text-white flex items-center justify-center ">
+            class="bg-lime-600/50 w-full p-0 text-white flex items-center justify-center ">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
                 <div class="flex items-center justify-between mx-auto max-w-screen-x gap-2">
                     <div>
