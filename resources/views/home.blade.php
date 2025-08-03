@@ -128,7 +128,7 @@
                 </div>
             </div>
         </section>
-        <section class="py-[150px]">
+        <section class="pt-[150px] pb-5">
             <div class="container  mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl flex flex-col items-center">
                 <div class="">
                     <h1
@@ -199,7 +199,7 @@
                 </div>
             </div>
         </section>
-        <section class="py-[250px]">
+        <section class="py-[100px]">
             <div class="container  mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl flex flex-col items-center">
                 <div class="">
                     <h1
