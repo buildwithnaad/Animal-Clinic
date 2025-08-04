@@ -14,6 +14,12 @@ Route::get('/home', function () {
 })->name('home');
 
 Route::view('/adoption', 'adoption')->name('adoption');
+Route::view('/about', 'about')->name('about');
+Route::view('/services', 'services')->name('services');
+Route::view('/contact', 'contact')->name('contact');
+Route::view('/blog', 'blog')->name('blog');
+Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
+
 
 Route::fallback(function () {
     return view('errors/404');

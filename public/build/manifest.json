@@ -16,7 +16,7 @@
     "src": "node_modules/@fortawesome/fontawesome-free/webfonts/fa-v4compatibility.woff2"
   },
   "resources/css/app.css": {
-    "file": "assets/app-BqxeKf06.css",
+    "file": "assets/app-ClRYCAms.css",
     "src": "resources/css/app.css",
     "isEntry": true,
     "names": [
@@ -24,12 +24,12 @@
     ]
   },
   "resources/js/app.js": {
-    "file": "assets/app-B16Uqiyy.js",
+    "file": "assets/app-BVXgbkYi.js",
     "name": "app",
     "src": "resources/js/app.js",
     "isEntry": true,
     "css": [
-      "assets/app-BqxeKf06.css"
+      "assets/app-ClRYCAms.css"
     ],
     "assets": [
       "assets/fa-brands-400-DFY6gyJh.woff2",

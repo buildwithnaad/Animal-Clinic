@@ -80,7 +80,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    Who we are?
+                                    About
                                 </a>
                             </li>
                             <li>
@@ -106,7 +106,7 @@
                         </ul>
                     </div>
                     <div>
-                        <button class="p-4 px-6 bg-lime-500 rounded hover:brightness-105">DISCOVER THE SERVICES</button>
+                        <button class="discover-btn p-4 px-6 bg-lime-500 rounded hover:brightness-105">DISCOVER THE SERVICES</button>
                     </div>
                 </div>
             </div>
