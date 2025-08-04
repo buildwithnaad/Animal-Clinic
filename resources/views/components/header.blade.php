@@ -35,7 +35,6 @@
                     </div>
                     <div class="md:flex md:flex-nowrap md:items-stretch md:w-auto md:max-w-full">
                         <div class="flex gap-10">
-                            <a href="{{ route('login') }}">Restricted area</a>
                             <div class="flex gap-2">
                                 <span>Social media</span>
                                 <a target="_blank" href="#">
@@ -74,32 +73,32 @@
                     <div class="flex items-center content-center ">
                         <ul class="flex gap-10 text-lg font-bold items-start justify-center">
                             <li>
-                                <a href="#">
+                                <a href="{{route('home')}}">
                                     Home
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('about')}}">
                                     About
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('adoption')}}">
                                     Adoption
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('services')}}">
                                     Services
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('blog')}}">
                                     Blog
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="{{route('contact')}}">
                                     Contact
                                 </a>
                             </li>
