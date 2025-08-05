@@ -2,9 +2,9 @@
     <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
         <div class="mx-0 rounded">
             <div class="flex w-full gap-2  relative -top-[250px] rounded bg-gray-100">
-                <div class="flex gap-5 items-center justify-center">
+                <div class="flex gap-5 flex-manage-custom items-center justify-center">
                     <img src="{{ url('cuidar_files/entreemcontato.png') }}" alt="" class="rounded-l">
-                    <div class="flex gap-5">
+                    <div class="flex gap-5 items-center flex-manage-custom">
                         <div
                             class="flex items-center justify-center bg-green-700 rounded-full text-white w-24 h-24 min-w-[96px] min-h-[96px]">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -17,10 +17,10 @@
                             </svg>
                         </div>
                         <div class="flex flex-col gap-3 ml-3">
-                            <h1 class="text-3xl text-green-700 font-sans font-bold">Do you need our services?
+                            <h1 class="text-3xl text-green-700 font-sans font-bold text-center md:text-start">Do you need our services?
                                 <span class="text-green-500"> Call us: (24)99882-4755</span>
                             </h1>
-                            <p class="text-md font-sans font-semibold text-gray-600 ">If you need any
+                            <p class="text-md font-sans font-semibold text-gray-600 text-center md:text-start ">If you need any
                                 clarification about our services or our operations, we are fully available to
                                 assist you. Count on us.
                             </p>
@@ -53,33 +53,33 @@
                     <div>
                         <ul class="text-gray-100 font-sans font-semibold flex flex-col gap-4">
                             <li>
-                                <a href="#" class="flex items-center">
+                                <a href="{{ route('about') }}" class="flex items-center">
                                     <i class="fa-solid fa-angle-right"></i>
                                     Who we are?
                                 </a>
                             </li>
                             <li>
-                                <a class="flex items-center" href="#">
+                                <a class="flex items-center" href="{{ route('adoption') }}">
                                     <i class="fa-solid fa-angle-right"></i>
                                     Adoption
                                 </a>
                             </li>
                             <li>
-                                <a class="flex items-center" href="#">
+                                <a class="flex items-center" href="{{ route('services') }}">
                                     <i class="fa-solid fa-angle-right"></i>
                                     Services
                                 </a>
 
                             </li>
                             <li>
-                                <a class="flex items-center" href="#">
+                                <a class="flex items-center" href="{{ route('blog') }}">
                                     <i class="fa-solid fa-angle-right"></i>
                                     Blog
                                 </a>
 
                             </li>
                             <li>
-                                <a class="flex items-center" href="#">
+                                <a class="flex items-center" href="{{ route('contact') }}">
                                     <i class="fa-solid fa-angle-right"></i>
                                     Contact
                                 </a>
@@ -119,24 +119,22 @@
             </div>
         </div>
     </div>
-    <div class="mt-20 text-white font-sans font-bold bg-lime-700 absolute bottom-0 w-full py-10">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-            <div class="relative">
-                <div class="pl-[300px] flex justify-between">
-                    <div>
-                        <span>Copyright 2025
-                            <span class="text-green-500">CUIDAR</span> All rights reserved.</span>
-                    </div>
-                    <div>
-                        <span>Proudly Developed by <a href="https://porfiriodev.vercel.app" target="_blank"
-                                class="text-green-500">Naad Ali</a></span>
-                    </div>
-                </div>
-                
+    <div class="mt-20 text-white font-sans font-bold  absolute bottom-0 w-full ">
+        <div class="container mx-auto max-w-screen-xl">
+            <div class="flex justify-center bg-lime-700 py-2">
+                <span>Copyright 2025s
+                    <span class="text-green-500">CUIDAR</span> All rights reserved.</span>
+
+            </div>
+            <div class="flex justify-center bg-lime-500 py-2">
+
+                <span>Proudly Developed by <a href="https://porfiriodev.vercel.app" target="_blank"
+                        class="text-green-900">Naad Ali</a></span>
+
             </div>
         </div>
     </div>
-    <div class="doggo absolute bottom-0 z-[1] ">
-            <img src="{{ url('cuidar_files/final_dog.png') }}" class="h-[300px]" />
-        </div>
+    <div class="doggo absolute bottom-0 z-[1] md:block hidden">
+        <img src="{{ url('cuidar_files/final_dog.png') }}" class="h-[300px]" />
+    </div>
 </footer>

@@ -60,7 +60,7 @@
                             @if (Auth::user()->id == 1 || Auth::user()->id == 2)
                                 <a href="{{ route('register') }}" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
-                                    <span>Registrar New User</span>
+                                    <span>Register New User</span>
                                 </a>
                             @endif
                             <div class="dropdown-divider"></div>
@@ -150,6 +150,14 @@
                                 <span> Home </span>
                             </a>
                         </li>
+
+                        <li>
+                            <a href="{{ route('admin.blogs') }}">
+                                <i class="fas fa-blog"></i> {{-- Doctor icon --}}
+                                <span> All Blogs </span>
+                            </a>
+                        </li>
+
 
                         <li>
                             <a href="{{ route('clientes.index') }}">

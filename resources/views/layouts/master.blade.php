@@ -34,6 +34,22 @@
 
 
     <x-footer />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $('#btn-header-toggle').on('click', function() {
+            $('#header-menu-mobile').toggleClass('hidden');
+            if ($('#header-menu-icon').hasClass('fa-bars')) {
+                $('#header-menu-icon').addClass('fa-xmark');
+                $('#header-menu-icon').removeClass('fa-bars');
+
+            } else if ($('#header-menu-icon').hasClass('fa-xmark')) {
+                $('#header-menu-icon').removeClass('fa-xmark');
+                $('#header-menu-icon').addClass('fa-bars');
+
+            }
+        })
+    </script>
     <script>
         const topbar = document.getElementById("top-bar");
         const backToTopBtn = document.getElementById("back-to-top");

@@ -77,8 +77,9 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <h3 class="mt-4">Página não encontrada</h3>
-                                    <p class="text-muted mb-0">Parece que você entrou no caminho errado. Mas não se preocupe... Acontece com todos nós, mas vou te dar uma dica pra você seguir seu caminho: Seria bom conferir sua conexão com a internet!</p>
+                                    <h3 class="mt-4">Page Not Found
+</h3>
+                                    <p class="text-muted mb-0">It looks like you’ve taken a wrong turn. Don’t worry… It happens to the best of us. Here's a tip to get back on track: you might want to check your internet connection!</p>
                                 </div>
 
                             </div> <!-- end card-body -->
@@ -87,7 +88,7 @@
 
                         <div class="row mt-3">
                             <div class="col-12 text-center">
-                                <p class="text-white-50">Voltar ao <a href="{{route('home')}}" class="text-white ml-1"><b>Início</b></a></p>
+                                <p class="text-white-50">Back to <a href="{{route('home')}}" class="text-white ml-1"><b>Home</b></a></p>
                             </div> <!-- end col -->
                         </div>
                         <!-- end row -->
@@ -101,7 +102,7 @@
         <!-- end page -->
 
         <footer class="footer footer-alt">
-            <script>document.write(new Date().getFullYear())</script> Desenvolvido por <a href="https://porfiriodev.vercel.app" target="_blank" class="text-white-50">Porfírio</a>
+            <script>document.write(new Date().getFullYear())</script>Developed by<a href="https://porfiriodev.vercel.app" target="_blank" class="text-white-50">Naad Ali</a>
         </footer>
 
         <!-- Vendor js -->

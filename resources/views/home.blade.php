@@ -1,21 +1,17 @@
 @extends('layouts.master')
 
-<style>
-    .hero-section {
-        background-image: url('{{ url('cuidar_files/banner1.png') }}');
-    }
-</style>
-
 @section('content')
-    <section class="w-full min-h-screen z-10 hero-section" style="padding: 220px 20px 20px 50px ">
+    <section class="w-full bg-top-right md:top-right   min-h-screen z-10 hero-section bg-[url('http://pet_clinic.test/cuidar_files/banner1.png')]" style="padding: 220px 20px 20px 50px ">
+        <div class="bg-black w-full h-[100%] visible absolute top-0 left-0" style="opacity: 0.5"></div>
 
-        <div class="flex flex-col z-10  gap-10" >
+
+        <div class="flex flex-col z-10  gap-10 relative" >
             <h1 class="flex flex-col max-w-md text-white gap-3">
                 <span class="font-sans font-bold text-xl">Veterinary Medical Care</span>
-                <span class="font-sans font-black text-6xl">Rescue, Treatment and Promotion of Responsible Adoption
+                <span class="font-sans font-black text-5xl md:text-6x1">Rescue, Treatment and Promotion of Responsible Adoption
                 </span>
             </h1>
-            <div class="flex text-white items-center gap-10 font-sans font-bold">
+            <div class="flex text-white items-center sm:justify-start justify-center flex-wrap gap-10 font-sans font-bold">
                 <a href="#"
                     class="py-6 px-8 bg-green-700 uppercase flex flex-col items-center justify-center transition-all duration-250 hover:opacity-75 hover:transition-all hover:duration-250">Speak with us</a>
                 <span class="text-lg">(24)99882-4755</span>
@@ -25,47 +21,42 @@
     </section>
 
     <main class="z-20">
-        <section class="pt-[150px] pb-[250px]">
-            <div class="container  mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="col-span-1">
-                        <img src="{{ url('cuidar_files/home_welcome.png') }}" alt="">
-                    </div>
-                    <div class="col-span-1 w-100">
-                        <h1 class="text-4xl lg:text-5xl font-extrabold mb-4 flex flex-col font-sans gap-2">
-                            <small class="text-sm text-gray-600">Quality & Experience</small>
-                            <span class="text-green-700">
-                                Quality & Experience
-                                Welcome to <span class="text-green-500">CUIDAR</span></span>
-                        </h1>
-
-                        <p class="mb-6 font-sans w-10/12 text-lg font-medium">
-                            CUIDAR was founded with the goal of becoming a sustainable and solid company that promotes
-                            the care of stray animals with low expectations. We understand that this path, with
-                            abandoned and/or unattended animals, can exacerbate public health problems and cause various
-                            types of accidents. That's why we decided to found CUIDAR and provide individuals,
-                            businesses, and government agencies with someone to rely on when needed.
-                        </p>
-
-                        <ul class="list-inside mb-6 text-lg font-semibold py-5">
-                            <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1"></i></span>We
-                                have an area of over 3
-                                thousand square meters
-                                metros quadrados</li>
-                            <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1"></i></span>Physical structure in constant
-                                evolution</li>
-                            <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1"></i></span>Professionals dedicated to care 7
-                                days a week
-                            </li>
-                        </ul>
-
-                        <a href="#"
-                            class="bg-lime-800 text-white py-4 px-8 rounded-full inline-block transition duration-300 hover:brightness-110">Contact
-                            Us</a>
-                    </div>
-                </div>
+      <section class="pt-24 pb-32 w-full overflow-hidden mb-[100px]">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <!-- Image -->
+            <div class="w-full">
+                <img src="{{ url('cuidar_files/home_welcome.png') }}" alt="CUIDAR Welcome Image" class="w-full h-auto object-contain">
             </div>
-        </section>
+
+            <!-- Text Content -->
+            <div class="w-full flex flex-col justify-center items-center lg:items-start text-center lg:text-left">
+                <h1 class="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4 font-sans gap-2">
+                    <small class="block text-sm text-gray-600 mb-1">Quality & Experience</small>
+                    <span class="text-green-700 leading-tight">
+                        Welcome to <span class="text-green-500">CUIDAR</span>
+                    </span>
+                </h1>
+
+                <p class="mb-6 font-sans text-base sm:text-lg font-medium max-w-[100%] sm:max-w-[90%]">
+                    CUIDAR was founded with the goal of becoming a sustainable and solid company that promotes the care of stray animals with low expectations. We understand that this path, with abandoned and/or unattended animals, can exacerbate public health problems and cause various types of accidents. That's why we decided to found CUIDAR and provide individuals, businesses, and government agencies with someone to rely on when needed.
+                </p>
+
+                <ul class="list-inside mb-6 text-base sm:text-lg font-semibold py-5">
+                    <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1 text-green-600"></i> We have an area of over 3 thousand square meters</li>
+                    <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1 text-green-600"></i> Physical structure in constant evolution</li>
+                    <li class="my-3 flex items-start gap-2"><i class="fa-solid fa-paw mt-1 text-green-600"></i> Professionals dedicated to care 7 days a week</li>
+                </ul>
+
+                <a href="#"
+                    class="bg-lime-800 text-white py-3 px-6 sm:py-4 sm:px-8 rounded-full inline-block transition duration-300 hover:brightness-110 text-sm sm:text-base">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 
         <section class="pb-[100px] bg-lime-800">
             <div class="container  mx-auto px-4 sm:px-6 lg:px-8 max-w-screen-xl">

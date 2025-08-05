@@ -1,4 +1,6 @@
-@extends('layouts.master')
+@extends('layouts.dashboard')
+@section('title', 'Clients')
+@section('dash-body')
 
 @section('content')
     <!-- Hero Section -->
