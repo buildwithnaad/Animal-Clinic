@@ -167,7 +167,7 @@
                         </li>
 
                         <li>
-                            <a href="{{ route('animais.index') }}">
+                            <a href="{{ route('animalSales.index') }}">
                                 <i class="fas fa-paw"></i>
                                 <span> Animal Registration </span>
                             </a>
@@ -300,6 +300,9 @@
     <script>
         $('#sidebarReports').removeClass("show")
     </script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    @stack('script')
 
     @if (Route::is('procedimentos.*') || Route::is('gera-procedimento.*'))
         <script>

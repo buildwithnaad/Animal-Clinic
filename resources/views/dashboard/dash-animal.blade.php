@@ -32,158 +32,133 @@
                         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs="
                         crossorigin="anonymous"></script>
 
-                        <div class="card-body">
-                            <div class="form-group">
-                                <form role="form" action="{{ route('animais.store') }}" method="POST" enctype="multipart/form-data" id="formnovoAnimal" autocomplete="on" style="display: none;">
-                                @csrf
-                                <div class="column">
-                                    <div class="col-md-12 col-12 justify-content-center">
-                                        <h4>Novo Animal</h4>
-                                            <div class="col-md-12 d-flex my-3">
-                                                <div id="nome" class="col-md-4">
-                                                    <label>Nome</label>
-                                                    <input type="text" required class="form-control" name="animal_nome" placeholder="Insira o nome do animal" value="">
-                                                </div>
-                                                <div id="chip" class="col-md-3">
-                                                    <label>Nº do Chip</label>
-                                                    <input type="text" required class="form-control" name="chip" placeholder="Insira o número do chip" value="">
-                                                </div>
-                                                <div id="tipo" class="col-md-3">
-                                                    <label>Tipo to Animal</label>
-                                                    <select class='form-control select2' name='tipo' required>
-                                                        <option value="" selected>Selecione...</option>
-                                                        <option value="Felino" >Felino</option>
-                                                        <option value="Canino" >Canino</option>
-                                                        <option value="Equino" >Equino</option>
-                                                        <option value="Caprino" >Caprino</option>
-                                                        <option value="Bovino" >Bovino</option>
-                                                        <option value="Ave" >Ave</option>
-                                                        <option value="Reptil" >Réptil</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-12 d-flex my-3">
-                                                <div id="raca" class="col-md-4">
-                                                    <label>Raça</label>
-                                                    <input required type="text" class="form-control" name="raca" placeholder="Insira a raça do animal" value="">
-                                                </div>
-                                                <div id="porte" class="col-md-3">
-                                                    <label>Porte</label>
-                                                    <input required type="text" class="form-control" name="porte" placeholder="Insira o porte do animal" value="">
-                                                </div>
-                                                <div id="porte" class="col-md-3">
-                                                    <label>Idade Aproximada</label>
-                                                    <input required type="text" class="form-control" name="idade" placeholder="Ex: 5 anos" value="">
-                                                </div>
-
-                                            </div>
-                                            <div class="col-md-12 d-flex my-3 align-items-center" >
-                                                <h5 class="ml-2 mt-2">Óbito?</h5><br>
-                                                <div class="form-check mr-3 ml-2 mt-1">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                                                    <label class="form-check-label" for="flexRadioDefault1">
-                                                        Não
-                                                    </label>
-                                                </div>
-                                                <div class="form-check mr-5 mt-1">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-                                                    <label class="form-check-label" for="flexRadioDefault2">
-                                                        Sim
-                                                    </label>
-                                                </div>
-                                                <!-- <div id="obito_data" class="col-md-3">
-                                                    <label>Data do Óbito</label>
-                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data to óbito">
-                                                </div> -->
-                                            </div>
-                                            <div class="col-md-6 d-flex my-3">
-                                                <div id="obito_data" class="col-md-4">
-                                                    <label>Data do Óbito</label>
-                                                    <input type="date" class="form-control" name="obito_data" placeholder="Insira a data to óbito">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 d-flex my-3">
-                                                <div class="col-md-3" id="obito_causa">
-                                                    <textarea style="width:470px;" type="text" class="form-control" name="obito_causa" placeholder="Insira o motivo do óbito"></textarea>
-                                                </div>
-                                            </div>
-
-
-                                        <div class="d-flex justify-content-start">
-                                            <button type="submit" class="btn btn-success my-1 mr-2" name="addAnimal" value="adicionarAnimal">Adicionar</button>
-                                            <button type="button" class="btn btn-danger my-1" id="cancelNew" name="cancelNew" value="cancelNew">Cancelar</button>
-
-                                        </div>
-                                    </div>
-                            </form>
-
-                            </div>
-
-                            <div class="">
-                                <button type="button" id="novoAnimal" class="btn btn-success my-1">Novo</button>
-                            </div>
-
-
-
-                                        <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">
-                                            <thead>
-                                                <tr>
-                                                    <th>id</th>
-                                                    <th>Nome</th>
-                                                    <th>Nº Chip</th>
-                                                    <th>Tipo</th>
-                                                    <th>Porte</th>
-                                                    <th>Raça</th>
-                                                    <th>Idade</th>
-                                                    <th>Óbito?</th>
-                                                    <th></th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                            @foreach ($animals as $animal)
-                                                <tr>
-                                                    <td>{{$animal->id}}</td>
-
-                                                    <td>{{$animal->animal_nome}}</td>
-
-                                                    <td>{{$animal->chip}}</td>
-
-                                                    <td>{{$animal->tipo}}</td>
-
-                                                    <td>{{$animal->porte}}</td>
-
-                                                    <td>{{$animal->raca}}</td>
-
-                                                    <td>{{preg_replace('/[^0-9]/','',$animal->idade)}}</td>
-
-                                                    @if($animal->obito_data)
-                                                    <!-- <td>{{$animal->obito_data}}</td> -->
-                                                    <td><span style='font-size:20px; color:green'>&#10004;</span></td>
-                                                    @else
-                                                    <td><span style='font-size:20px; color:red'>&#10006;</span></td>
-                                                    @endif
-                                                    <td class="d-flex justify-content-end">
-
-                                                    <a href="{{ route('animais.edit', $animal->id) }}" class="btn btn-warning mx-1" ><i class="fas fa-pencil-alt"></i></a>
-
-                                                        <form action="{{ route('animais.destroy', $animal->id)}}" method="POST"
-                                                             onsubmit="return confirm('Deseja apagar esta animal?');">
-
-                                                            @csrf
-                                                            @method('DELETE')
-
-                                                            <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>
-
-                                                    </form>
-
-                                                    </td>
-                                                </tr>
-                                            @endforeach
-
-                                            </tbody>
-                                        </table>
-
-                                    </div> <!-- end card body-->
+                        <div class="card-body">                             
+    <div class="form-group">                                 
+        <form role="form" action="{{ route('animais.store') }}" method="POST" enctype="multipart/form-data" id="formnovoAnimal" autocomplete="on" style="display: none;">                                 
+            @csrf                                 
+            <div class="column">                                     
+                <div class="col-md-12 col-12 justify-content-center">                                         
+                    <h4>New Animal</h4>                                             
+                    <div class="col-md-12 d-flex my-3">                                                 
+                        <div id="nome" class="col-md-4">                                                     
+                            <label>Name</label>                                                     
+                            <input type="text" required class="form-control" name="animal_nome" placeholder="Enter the animal's name" value="">                                                 
+                        </div>                                                 
+                        <div id="chip" class="col-md-3">                                                     
+                            <label>Chip Number</label>                                                     
+                            <input type="text" required class="form-control" name="chip" placeholder="Enter the chip number" value="">                                                 
+                        </div>                                                 
+                        <div id="tipo" class="col-md-3">                                                     
+                            <label>Animal Type</label>                                                     
+                            <select class='form-control select2' name='tipo' required>                                                         
+                                <option value="" selected>Select...</option>                                                         
+                                <option value="Felino" >Feline</option>                                                         
+                                <option value="Canino" >Canine</option>                                                         
+                                <option value="Equino" >Equine</option>                                                         
+                                <option value="Caprino" >Caprine</option>                                                         
+                                <option value="Bovino" >Bovine</option>                                                         
+                                <option value="Ave" >Bird</option>                                                         
+                                <option value="Reptil" >Reptile</option>                                                     
+                            </select>                                                 
+                        </div>                                             
+                    </div>                                             
+                    <div class="col-md-12 d-flex my-3">                                                 
+                        <div id="raca" class="col-md-4">                                                     
+                            <label>Breed</label>                                                     
+                            <input required type="text" class="form-control" name="raca" placeholder="Enter the animal's breed" value="">                                                 
+                        </div>                                                 
+                        <div id="porte" class="col-md-3">                                                     
+                            <label>Size</label>                                                     
+                            <input required type="text" class="form-control" name="porte" placeholder="Enter the animal's size" value="">                                                 
+                        </div>                                                 
+                        <div id="porte" class="col-md-3">                                                     
+                            <label>Approximate Age</label>                                                     
+                            <input required type="text" class="form-control" name="idade" placeholder="Ex: 5 years" value="">                                                 
+                        </div>                                              
+                    </div>                                             
+                    <div class="col-md-12 d-flex my-3 align-items-center" >                                                 
+                        <h5 class="ml-2 mt-2">Deceased?</h5><br>                                                 
+                        <div class="form-check mr-3 ml-2 mt-1">                                                     
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>                                                     
+                            <label class="form-check-label" for="flexRadioDefault1">                                                         
+                                No                                                     
+                            </label>                                                 
+                        </div>                                                 
+                        <div class="form-check mr-5 mt-1">                                                     
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >                                                     
+                            <label class="form-check-label" for="flexRadioDefault2">                                                         
+                                Yes                                                     
+                            </label>                                                 
+                        </div>                                                 
+                        <!-- <div id="obito_data" class="col-md-3">                                                     
+                            <label>Date of Death</label>                                                     
+                            <input type="date" class="form-control" name="obito_data" placeholder="Enter the date of death">                                                 
+                        </div> -->                                             
+                    </div>                                             
+                    <div class="col-md-6 d-flex my-3">                                                 
+                        <div id="obito_data" class="col-md-4">                                                     
+                            <label>Date of Death</label>                                                     
+                            <input type="date" class="form-control" name="obito_data" placeholder="Enter the date of death">                                                 
+                        </div>                                             
+                    </div>                                             
+                    <div class="col-md-6 d-flex my-3">                                                 
+                        <div class="col-md-3" id="obito_causa">                                                     
+                            <textarea style="width:470px;" type="text" class="form-control" name="obito_causa" placeholder="Enter the reason for death"></textarea>                                                 
+                        </div>                                             
+                    </div>                                           
+                    <div class="d-flex justify-content-start">                                             
+                        <button type="submit" class="btn btn-success my-1 mr-2" name="addAnimal" value="adicionarAnimal">Add</button>                                             
+                        <button type="button" class="btn btn-danger my-1" id="cancelNew" name="cancelNew" value="cancelNew">Cancel</button>                                          
+                    </div>                                     
+                </div>                             
+        </form>                              
+    </div>                              
+    <div class="">                                 
+        <button type="button" id="novoAnimal" class="btn btn-success my-1">New</button>                             
+    </div>                                            
+    <table id="datatable-buttons" class="table table-striped dt-responsive nowrap w-100">                                             
+        <thead>                                                 
+            <tr>                                                     
+                <th>ID</th>                                                     
+                <th>Name</th>                                                     
+                <th>Chip Number</th>                                                     
+                <th>Type</th>                                                     
+                <th>Size</th>                                                     
+                <th>Breed</th>                                                     
+                <th>Age</th>                                                     
+                <th>Deceased?</th>                                                     
+                <th></th>                                                 
+            </tr>                                             
+        </thead>                                             
+        <tbody>                                             
+        @foreach ($animals as $animal)                                                 
+            <tr>                                                     
+                <td>{{$animal->id}}</td>                                                      
+                <td>{{$animal->animal_nome}}</td>                                                      
+                <td>{{$animal->chip}}</td>                                                      
+                <td>{{$animal->tipo}}</td>                                                      
+                <td>{{$animal->porte}}</td>                                                      
+                <td>{{$animal->raca}}</td>                                                      
+                <td>{{preg_replace('/[^0-9]/','',$animal->idade)}}</td>                                                      
+                @if($animal->obito_data)                                                     
+                <!-- <td>{{$animal->obito_data}}</td> -->                                                     
+                <td><span style='font-size:20px; color:green'>&#10004;</span></td>                                                     
+                @else                                                     
+                <td><span style='font-size:20px; color:red'>&#10006;</span></td>                                                     
+                @endif                                                     
+                <td class="d-flex justify-content-end">                                                      
+                    <a href="{{ route('animais.edit', $animal->id) }}" class="btn btn-warning mx-1" ><i class="fas fa-pencil-alt"></i></a>                                                          
+                    <form action="{{ route('animais.destroy', $animal->id)}}" method="POST" onsubmit="return confirm('Do you want to delete this animal?');">                                                              
+                        @csrf                                                             
+                        @method('DELETE')                                                              
+                        <button type="submit" class="btn btn-danger"><i class="fas fa-trash"></i></button>                                                      
+                    </form>                                                      
+                </td>                                                 
+            </tr>                                             
+        @endforeach                                              
+        </tbody>                                         
+    </table>                                      
+</div> <!-- end card body-->
 
                     </div><!--  container -->
 
