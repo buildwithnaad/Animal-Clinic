@@ -1,10 +1,13 @@
 @extends('layouts.master')
-@php use Illuminate\Support\Str; @endphp
+
+@section('heading')
+    Adopt | Pet clinic
+@endsection
 
 <x-notification />
 @section('content')
     <section
-        class="w-full min-h-screen bg-[url('http://pet_clinic.test/cuidar_files/adoption.jpg')] bg-center bg-cover bg-no-repeat flex justify-center items-center">
+        class="w-full min-h-screen bg-center bg-cover bg-no-repeat flex justify-center items-center" style="background-image: url({{asset('cuidar_files/adoption.jpg')}})">
         <div class="bg-black w-full min-h-screen absolute top-0 left-0 z-0" style="opacity: 0.5"></div>
 
 
@@ -188,8 +191,8 @@
                             <div class="p-6 flex flex-col gap-2">
                                 <h3 class="text-xl font-bold text-green-600">{{ $animal->name }}</h3>
                                 <p class="text-gray-600 text-sm">{{ $animal->age }} old • {{ $animal->type }}</p>
-                                <p class="text-gray-700 text-sm">
-                                    {{ Str::words($animal->description, 20, '...') }}
+                                <p class="text-gray-700 text-sm h-[100px] overflow-hidden">
+                                    {{ $animal->description }}
 
                                 </p>
                                 <p class="text-gray-800 text-sm font-semibold flex items-center justify-between ">
@@ -230,56 +233,55 @@
                     </p>
                 </div>
 
-                <form id="adoptionForm" action="{{ route('adoption.store') }}" method="POST" class="space-y-5">
-@csrf
-                    <!-- Full Name -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-user text-green-600"></i>
-                        <input type="text" class="w-full border border-gray-300 p-3 rounded" placeholder="Full Name"
-                            required>
-                    </div>
+               <form id="adoptionForm" action="{{ route('adoption.store') }}" method="POST" class="space-y-5">
+    @csrf
 
-                    <!-- Email Address -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-envelope text-green-600"></i>
-                        <input type="email" class="w-full border border-gray-300 p-3 rounded"
-                            placeholder="Email Address" required>
-                    </div>
+    <!-- Full Name -->
+    <div class="flex items-center gap-3">
+        <i class="fas fa-user text-green-600"></i>
+        <input type="text" name="full_name" class="w-full border border-gray-300 p-3 rounded" placeholder="Full Name" required>
+    </div>
 
-                    <!-- Phone Number -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-phone text-green-600"></i>
-                        <input type="text" class="w-full border border-gray-300 p-3 rounded"
-                            placeholder="Phone Number" required>
-                    </div>
+    <!-- Email Address -->
+    <div class="flex items-center gap-3">
+        <i class="fas fa-envelope text-green-600"></i>
+        <input type="email" name="email" class="w-full border border-gray-300 p-3 rounded" placeholder="Email Address" required>
+    </div>
 
-                    <!-- Address -->
-                    <div class="flex items-start gap-3">
-                        <i class="fas fa-map-marker-alt text-green-600 mt-3"></i>
-                        <textarea rows="3" class="w-full border border-gray-300 p-3 rounded resize-none" placeholder="Full Address"
-                            required></textarea>
-                    </div>
+    <!-- Phone Number -->
+    <div class="flex items-center gap-3">
+        <i class="fas fa-phone text-green-600"></i>
+        <input type="text" name="phone" class="w-full border border-gray-300 p-3 rounded" placeholder="Phone Number" required>
+    </div>
 
-                    <!-- Bank Name -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-university text-green-600"></i>
-                        <input type="text" class="w-full border border-gray-300 p-3 rounded" placeholder="Bank Name"
-                            required>
-                    </div>
+    <!-- Address -->
+    <div class="flex items-start gap-3">
+        <i class="fas fa-map-marker-alt text-green-600 mt-3"></i>
+        <textarea rows="3" name="address" class="w-full border border-gray-300 p-3 rounded resize-none" placeholder="Full Address" required></textarea>
+    </div>
 
-                    <!-- IBAN Number -->
-                    <div class="flex items-center gap-3">
-                        <i class="fas fa-credit-card text-green-600"></i>
-                        <input type="text" class="w-full border border-gray-300 p-3 rounded" placeholder="IBAN Number"
-                            required>
-                    </div>
+    <!-- Bank Name -->
+    <div class="flex items-center gap-3">
+        <i class="fas fa-university text-green-600"></i>
+        <input type="text" name="bank_name" class="w-full border border-gray-300 p-3 rounded" placeholder="Bank Name" required>
+    </div>
 
-                    <!-- Pay Button -->
-                    <button type="submit"
-                        class="w-full bg-green-700 text-white font-bold py-3 px-6 rounded-full hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2">
-                        <i class="fas fa-lock"></i> Pay Now
-                    </button>
-                </form>
+    <!-- IBAN Number -->
+    <div class="flex items-center gap-3">
+        <i class="fas fa-credit-card text-green-600"></i>
+        <input type="text" name="iban_number" class="w-full border border-gray-300 p-3 rounded" placeholder="IBAN Number" required>
+    </div>
+
+    <!-- Hidden fields (populated by showPayment function) -->
+    <input type="hidden" name="animal_name" id="animal_name_input">
+    <input type="hidden" name="animal_price" id="animal_price_input">
+
+    <!-- Pay Button -->
+    <button type="submit" class="w-full bg-green-700 text-white font-bold py-3 px-6 rounded-full hover:brightness-110 transition-all duration-300 flex items-center justify-center gap-2">
+        <i class="fas fa-lock"></i> Pay Now
+    </button>
+</form>
+
 
             </div>
 
@@ -372,50 +374,55 @@
 
 
 
-   <script>
+ {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> --}}
+@push('script')
+    <script>
     // Show payment section
     function showPayment(price, name) {
-        document.getElementById("animalName").textContent = name;
-        document.getElementById("animalPrice").textContent = price;
-        document.getElementById("animal_name_input").value = name;
-        document.getElementById("animal_price_input").value = price;
+        $("#animalName").text(name);
+        $("#animalPrice").text(price);
+        $("#animal_name_input").val(name);
+        $("#animal_price_input").val(price);
 
-        const section = document.getElementById("paymentSection");
-        section.classList.remove("hidden");
-        section.scrollIntoView({ behavior: 'smooth' });
+        const section = $("#paymentSection");
+        section.removeClass("hidden");
+        section[0].scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Handle form submit via JS
-    document.getElementById("adoptionForm").addEventListener("submit", function (e) {
+    // Handle form submit via jQuery
+    $("#adoptionForm").on("submit", function (e) {
         e.preventDefault();
 
-        const form = e.target;
-        const url = form.action;
+        const form = $(this);
+        const url = form.attr("action");
+        const formData = new FormData(this);
 
-        const formData = new FormData(form);
-
-        fetch(url, {
+        $.ajax({
+            url: url,
             method: "POST",
+            data: formData,
+            processData: false,
+            contentType: false,
             headers: {
-                'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value
+                'X-CSRF-TOKEN': $('input[name="_token"]').val()
             },
-            body: formData
-        })
-        .then(response => {
-            if (response.ok) {
-                // ✅ Success popup
-                alert("✅ Payment Successful!\n\nOur team will contact you shortly.");
-                form.reset();
-                document.getElementById("paymentSection").classList.add("hidden");
-            } else {
-                alert("❌ Something went wrong. Please try again.");
+            success: function (response) {
+                if (response.success) {
+                    alert("✅ Payment Successful!\n\nOur team will contact you shortly.");
+                    form[0].reset();
+                    $("#paymentSection").addClass("hidden");
+                } else {
+                    alert("❌ " + (response.message || "Something went wrong."));
+                }
+            },
+            error: function (xhr) {
+                console.error(xhr);
+                alert("❌ Error! Try again.");
             }
-        })
-        .catch(error => {
-            console.error(error);
-            alert("❌ Error! Try again.");
         });
     });
 </script>
+@endpush
+
 
 @endsection

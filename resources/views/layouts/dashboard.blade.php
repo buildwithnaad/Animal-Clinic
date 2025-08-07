@@ -173,30 +173,20 @@
                             </a>
                         </li>
 
-                        <li>
-                            <a href="{{ route('produtos.index') }}">
-                                <i class="mdi mdi-truck-outline"></i>
-                                <span> Product Registration </span>
-                            </a>
-                        </li>
+                       <li>
+    <a href="{{ route('adoption.index') }}">
+        <i class="fas fa-paw"></i> {{-- Animal Adoption Icon --}}
+        <span> Adoptions </span>
+    </a>
+</li>
 
-                        <li>
-                            <a href="#sidebarProcedures" data-toggle="collapse">
-                                <i class="mdi mdi-stethoscope"></i>
-                                <span> Procedures </span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <div class="collapse" id="sidebarProcedures">
-                                <ul class="nav-second-level">
-                                    <li>
-                                        <a href="{{ route('procedimentos.index') }}">Register New Procedure</a>
-                                    </li>
-                                    <li>
-                                        <a href="{{ route('gera-procedimento.index') }}">Generate Procedure</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
+<li>
+    <a href="{{ route('contact.message.index') }}">
+        <i class="fas fa-envelope"></i> {{-- Contact Message Icon --}}
+        <span> Contact </span>
+    </a>
+</li>
+
 
                         <li>
                             <a href="#sidebarReports" data-toggle="collapse">

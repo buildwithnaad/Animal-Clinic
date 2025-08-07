@@ -140,8 +140,8 @@
                 </div>
 
                 <div>
-                    <button class="discover-btn p-4 px-6 bg-lime-500 rounded hover:brightness-105">DISCOVER THE
-                        SERVICES</button>
+                    <a href="{{route('services')}}" class="discover-btn p-4 px-6 bg-lime-500 rounded hover:brightness-105">DISCOVER THE
+                        SERVICES</a>
                 </div>
             </div>
         </div>

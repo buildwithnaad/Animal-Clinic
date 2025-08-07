@@ -10,6 +10,7 @@ use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\AdoptionController;
 use App\Http\Controllers\AnimalSaleController;
 use App\Http\Controllers\ProcedimentoController;
+use App\Http\Controllers\ContactMessageController;
 use App\Http\Controllers\GeraProcedimentoController;
 
 Route::get('/home', function () {
@@ -21,6 +22,8 @@ Route::get('/adoption', [AnimalSaleController::class, 'allAnimals'])->name('adop
 Route::view('/about', 'about')->name('about');
 Route::view('/services', 'services')->name('services');
 Route::view('/contact', 'contact')->name('contact');
+Route::post('/contact-message', [ContactMessageController::class, 'store'])->name('contact.message.store');
+
 // Route::view('/blog', 'blog')->name('blog');
 Route::get('/blogs', [BlogController::class, 'index'])->name('blog');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
@@ -65,5 +68,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/admin/blogs/delete/{id}', [BlogController::class, 'destroy'])->name('admin.blogs.delete');
 
     Route::resource('animals', AnimalSaleController::class)->names('animalSales');
-
+    Route::get('/adoptions', [AdoptionController::class, 'index'])->name('adoption.index');
+    Route::delete('/adoptions/{id}', [AdoptionController::class, 'destroy'])->name('adoption.destroy');
+    Route::get('/admin/contact-messages', [ContactMessageController::class, 'index'])->name('contact.message.index');
+    Route::delete('/admin/contact-messages/{id}', [ContactMessageController::class, 'destroy'])->name('contact.message.destroy');
+    Route::delete('/dashboard/contact-messages/{id}', [ContactMessageController::class, 'destroy'])->name('contact.message.destroy');
 });

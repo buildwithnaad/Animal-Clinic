@@ -1,9 +1,11 @@
 @extends('layouts.master')
-
+@section('heading')
+    Blog | Pet clinic
+@endsection
 @section('content')
     <!-- Hero Banner -->
     <section
-        class="w-full min-h-screen bg-[url('http://pet_clinic.test/cuidar_files/blog.jpg')] bg-center bg-cover bg-no-repeat flex justify-center items-center">
+        class="w-full min-h-screen bg-center bg-cover bg-no-repeat flex justify-center items-center" style="background-image: url({{asset('cuidar_files/blog.jpg')}})">
         <div class="bg-black w-full min-h-screen absolute top-0 left-0 z-0" style="opacity: 0.5"></div>
         <div class="flex flex-col z-10 w-100 md:w-[50%]  gap-10 mt-[100px]">
             <h1 class="flex flex-col w-full text-white gap-3">

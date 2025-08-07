@@ -8,6 +8,14 @@ class Adoption extends Model
 {
     // app/Models/Adoption.php
 
-protected $guarded = [];
+protected $fillable = [
+    'full_name',
+    'email',
+    'phone',
+    'address',
+    'animal_name',
+    'animal_price',
+];
+
 
 }

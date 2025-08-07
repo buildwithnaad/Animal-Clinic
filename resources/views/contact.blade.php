@@ -1,9 +1,12 @@
 @extends('layouts.master')
-
+@section('heading')
+    Contact | Pet clinic
+@endsection
 @section('content')
+<x-notification/>
     <!-- Hero Section -->
-    <section
-        class="w-full min-h-screen bg-[url('http://pet_clinic.test/cuidar_files/contact.jpg')] bg-center bg-cover bg-no-repeat flex justify-center items-center">
+    <section style="background-image: url({{asset('cuidar_files/contact.jpg')}})"
+        class="w-full min-h-screen bg-center bg-cover bg-no-repeat flex justify-center items-center">
         <div class="bg-black w-full min-h-screen absolute top-0 left-0 z-0" style="opacity: 0.5"></div>
         <div class="flex flex-col z-10 w-100 md:w-[50%]  gap-10 mt-[100px]">
             <h1 class="flex flex-col w-full text-white gap-3">
@@ -41,32 +44,40 @@
                 <!-- Contact Form -->
                 <div class="bg-gray-50 p-8 rounded-xl shadow-lg">
                     <h2 class="text-3xl font-extrabold text-green-700 mb-6">Send Us a Message</h2>
-                    <form method="POST" class="space-y-5">
-                        @csrf
-                        <div>
-                            <label class="block font-semibold mb-1">Full Name</label>
-                            <input type="text" name="name" required
-                                class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
-                        </div>
-                        <div>
-                            <label class="block font-semibold mb-1">Email</label>
-                            <input type="email" name="email" required
-                                class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
-                        </div>
-                        <div>
-                            <label class="block font-semibold mb-1">Subject</label>
-                            <input type="text" name="subject"
-                                class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
-                        </div>
-                        <div>
-                            <label class="block font-semibold mb-1">Message</label>
-                            <textarea name="message" rows="5" required
-                                class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
-                        </div>
-                        <button type="submit"
-                            class="bg-green-700 text-white font-bold py-2 px-6 rounded hover:bg-green-800 transition">Send
-                            Message</button>
-                    </form>
+                    <form method="POST" action="{{ route('contact.message.store') }}" class="space-y-5">
+    @csrf
+    <div>
+        <label class="block font-semibold mb-1">Full Name</label>
+        <input type="text" name="name" required
+            class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+    </div>
+    <div>
+        <label class="block font-semibold mb-1">Email</label>
+        <input type="email" name="email" required
+            class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+    </div>
+    <div>
+        <label class="block font-semibold mb-1">Subject</label>
+        <input type="text" name="subject"
+            class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600">
+    </div>
+    <div>
+        <label class="block font-semibold mb-1">Message</label>
+        <textarea name="message" rows="5" required
+            class="w-full border border-gray-300 px-4 py-2 rounded focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+    </div>
+    <button type="submit"
+        class="bg-green-700 text-white font-bold py-2 px-6 rounded hover:bg-green-800 transition">Send
+        Message</button>
+</form>
+
+<!-- Optional success message -->
+@if(session('success'))
+    <div class="mt-4 text-green-600 font-semibold">
+        {{ session('success') }}
+    </div>
+@endif
+
                 </div>
 
                 <!-- Google Map -->
